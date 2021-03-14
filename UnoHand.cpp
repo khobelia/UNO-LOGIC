@@ -3,7 +3,7 @@
 
 UnoHand::UnoHand()
 {
-    this->first = nullptr;
+    this->first = NULL;
 }
 
 void UnoHand::insertOne(int value, const std::string &color)
@@ -13,9 +13,9 @@ void UnoHand::insertOne(int value, const std::string &color)
     curr->set_value(value);
     curr->set_color(color);
 
-    curr->set_nextCard(nullptr);
+    curr->set_nextCard(NULL);
 
-    if (this->first == nullptr)
+    if (this->first == NULL)
     {
         this->first = curr;
     }
@@ -24,7 +24,7 @@ void UnoHand::insertOne(int value, const std::string &color)
     {
         UnoCard * srch = this->first;
 
-        while(srch->get_nextCard() != nullptr)
+        while(srch->get_nextCard() != NULL)
         {
             srch = srch->get_nextCard();
         }
@@ -38,7 +38,7 @@ bool UnoHand::removeOne(int value, const std::string & color)
     UnoCard * prev;
     UnoCard * curr = this->first;
 
-    if (curr == nullptr)
+    if (curr == NULL)
     {
         return false;
     }
@@ -53,7 +53,7 @@ bool UnoHand::removeOne(int value, const std::string & color)
 
     else
     {
-        while (curr->get_nextCard() != nullptr)
+        while (curr->get_nextCard() != NULL)
         {
             if (curr->get_nextCard()->get_value() == value && curr->get_nextCard()->get_color() == color)
             {
@@ -76,7 +76,7 @@ bool UnoHand::find(int value, const std::string & color)
 {
     UnoCard * curr = this->first;
 
-    if (this->first == nullptr)
+    if (this->first == NULL)
     {
         return false;
     }
@@ -88,7 +88,7 @@ bool UnoHand::find(int value, const std::string & color)
 
     else
     {
-        while (curr->get_nextCard() != nullptr)
+        while (curr->get_nextCard() != NULL)
         {
             if (curr->get_nextCard()->get_value() == value || curr->get_nextCard()->get_color() == color)
             {
@@ -101,7 +101,7 @@ bool UnoHand::find(int value, const std::string & color)
 
 bool UnoHand::isEmpty()
 {
-    if (this->first == nullptr)
+    if (this->first == NULL)
     {
         return true;
     }
@@ -113,7 +113,7 @@ void UnoHand::print()
 {
     UnoCard * curr = this->first;
 
-    while(curr != nullptr)
+    while(curr != NULL)
     {
         std::cout << curr->get_color() << curr->get_value() << " ";
 
